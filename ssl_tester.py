@@ -53,141 +53,140 @@ def parse_results():
 					# checking vulnerabilities
 					if 'RC4' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
-							rc4_list.add(url)
+							rc4_list.append(url)
 
 					if 'LUCKY13' == i['id']:
-						if i['finding'] and "not vulnerable" not in i['finding']:
-							lucky13_list.add(url)
+						if i['finding'] and "not vulnerable" in i['finding']:
+							lucky13_list.append(url)
 
 					if 'winshock' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
-							winshock_list.add(url)
+							winshock_list.append(url)
 					if 'BEAST' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
-							beast_list.add(url)														
+							beast_list.append(url)														
 
 					if 'LOGJAM' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
-							logjam_list.add(url)		
+							logjam_list.append(url)		
 
 					if 'DROWN' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
-							drown_list.add(url)		
+							drown_list.append(url)		
 
 					if 'FREAK' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
-							freak_list.add(url)		
+							freak_list.append(url)		
 
 					if 'SWEET32' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
-							sweet32_list.add(url)		
+							sweet32_list.append(url)		
 
 
 					if 'POODLE_SSL' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
-							poodle_list.add(url)		
+							poodle_list.append(url)		
 
 					if 'BREACH' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
-							breach_list.add(url)		
+							breach_list.append(url)		
 
 					# checking vulnerable protocols
 					if 'SSLv2' == i['id']:
 						if i['finding'] and "not offered" not in i['finding']:
-							breach_list.add(url)	
+							breach_list.append(url)	
 
 
 					if 'SSLv3' == i['id']:
 						if i['finding'] and "not offered" not in i['finding']:
-							breach_list.add(url)	
+							breach_list.append(url)	
 
 
 					if 'TLS1' == i['id']:
 						if i['finding'] and "not offered" not in i['finding']:
-							breach_list.add(url)	
+							breach_list.append(url)	
 
 
 					if 'TLS1_1' == i['id']:
 						if i['finding'] and "not offered" not in i['finding']:
-							breach_list.add(url)	
+							breach_list.append(url)	
 						
 
 
 def print_summary():
 	print("[!] Printing VULNERABILITIES and the affected hosts\n")
 	
-	print("[+] RC4\n")
+	print("[+] RC4")
 	for i in rc4_list:
 		print(i)
-		print("\n")
+	print("\n")
 
-	print("[+] LUCKY13\n")
+	print("[+] LUCKY13")
 	for i in lucky13_list:
 		print(i)
-		print("\n")
+	print("\n")
 
-	print("[+] WINSHOCK\n")
+	print("[+] WINSHOCK")
 	for i in winshock_list:
 		print(i)
-		print("\n")
+	print("\n")
 
-	print("[+] BEAST\n")
+	print("[+] BEAST")
 	for i in beast_list:
 		print(i)
-		print("\n")
+	print("\n")
 
-	print("[+] LOGJAM\n")
+	print("[+] LOGJAM")
 	for i in logjam_list:
 		print(i)
-		print("\n")
+	print("\n")
 
-	print("[+] DROWN\n")
+	print("[+] DROWN")
 	for i in drown_list:
 		print(i)
-		print("\n")
+	print("\n")
 
-	print("[+] FREAK\n")
+	print("[+] FREAK")
 	for i in freak_list:
 		print(i)
-		print("\n")
+	print("\n")
 
-	print("[+] SWEET32\n")
+	print("[+] SWEET32")
 	for i in sweet32_list:
 		print(i)
-		print("\n")
+	print("\n")
 
-	print("[+] POODLE\n")
+	print("[+] POODLE")
 	for i in poodle_list:
 		print(i)
-		print("\n")
+	print("\n")
 
-	print("[+] BREACH\n")
+	print("[+] BREACH")
 	for i in breach_list:
 		print(i)
-		print("\n")
-
+	print("\n")
 
 	print("[!] Printing VULNERABLE PROTOCOLS and the affected hosts\n")
 
-	print("[+] SSLv2\n")
+	print("[+] SSLv2")
 	for i in ssl2_list:
 		print(i)
-		print("\n")
+	print("\n")
 
-	print("[+] SSLv3\n")
+	print("[+] SSLv3")
 	for i in ssl3_list:
 		print(i)
-		print("\n")
+	print("\n")
 
-	print("[+] TLS 1\n")
+	print("[+] TLS 1")
 	for i in tls1_list:
 		print(i)
-		print("\n")
+	print("\n")
 
-	print("[+] TLS 1.1\n")
+	print("[+] TLS 1.1")
 	for i in tls1_1_list:
 		print(i)
-		print("\n")
+	print("\n")
 
 def main():
 	# Parsing arguments
