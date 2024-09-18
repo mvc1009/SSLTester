@@ -46,69 +46,80 @@ def parse_results():
 				data = json.load(jsonfile)
 				url = ""
 				for i in data:
-					if 'service' in i['id']:
-						url = i['ip'] + ':' + i['port']
-						#print("• %s\n" % url)
-					
+				
 					# checking vulnerabilities
 					if 'RC4' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
+							url = i['ip'] + ':' + i['port']
 							rc4_list.append(url)
 
-					if 'LUCKY13' == i['id']:
-						if i['finding'] and "not vulnerable" in i['finding']:
+					elif 'LUCKY13' == i['id']:
+						if i['finding'] and "not vulnerable" not in i['finding']:
+							url = i['ip'] + ':' + i['port']
 							lucky13_list.append(url)
 
-					if 'winshock' == i['id']:
+					elif 'winshock' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
+							url = i['ip'] + ':' + i['port']
 							winshock_list.append(url)
-					if 'BEAST' == i['id']:
+					elif 'BEAST' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
+							url = i['ip'] + ':' + i['port']
 							beast_list.append(url)														
 
-					if 'LOGJAM' == i['id']:
+					elif 'LOGJAM' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
+							url = i['ip'] + ':' + i['port']
 							logjam_list.append(url)		
 
-					if 'DROWN' == i['id']:
+					elif 'DROWN' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
+							url = i['ip'] + ':' + i['port']
 							drown_list.append(url)		
 
-					if 'FREAK' == i['id']:
+					elif 'FREAK' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
+							url = i['ip'] + ':' + i['port']
 							freak_list.append(url)		
 
-					if 'SWEET32' == i['id']:
+					elif 'SWEET32' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
+							url = i['ip'] + ':' + i['port']
 							sweet32_list.append(url)		
 
 
-					if 'POODLE_SSL' == i['id']:
+					elif 'POODLE_SSL' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
+							url = i['ip'] + ':' + i['port']
 							poodle_list.append(url)		
 
-					if 'BREACH' == i['id']:
+					elif 'BREACH' == i['id']:
 						if i['finding'] and "not vulnerable" not in i['finding']:
+							url = i['ip'] + ':' + i['port']
 							breach_list.append(url)		
 
 					# checking vulnerable protocols
-					if 'SSLv2' == i['id']:
+					elif 'SSLv2' == i['id']:
 						if i['finding'] and "not offered" not in i['finding']:
+							url = i['ip'] + ':' + i['port']
 							breach_list.append(url)	
 
 
-					if 'SSLv3' == i['id']:
+					elif 'SSLv3' == i['id']:
 						if i['finding'] and "not offered" not in i['finding']:
+							url = i['ip'] + ':' + i['port']
 							breach_list.append(url)	
 
 
-					if 'TLS1' == i['id']:
+					elif 'TLS1' == i['id']:
 						if i['finding'] and "not offered" not in i['finding']:
+							url = i['ip'] + ':' + i['port']
 							breach_list.append(url)	
 
 
-					if 'TLS1_1' == i['id']:
+					elif 'TLS1_1' == i['id']:
 						if i['finding'] and "not offered" not in i['finding']:
+							url = i['ip'] + ':' + i['port']
 							breach_list.append(url)	
 						
 
